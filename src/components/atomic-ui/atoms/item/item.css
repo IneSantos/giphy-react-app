@@ -1,0 +1,23 @@
+.item-label {
+    background-color: lightgrey;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+}
+
+.item-label:not(:last-child) {
+    margin-right: 10px;
+}
+
+@media (min-width: 50em){
+    .item-label:not(:last-child) {
+        margin-right: 12px;
+    }
+
+    .item-label:hover {
+        border-color: transparent;
+        box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
+    }
+}
