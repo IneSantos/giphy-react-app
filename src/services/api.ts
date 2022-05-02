@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ApiResponse } from "./type";
 
 const GIPHY_URL = "https://api.giphy.com/v1/gifs";
 const API_KEY = "D31L73ySufmBJ3YBDkmbVnH9TuWXuvMa";
@@ -48,8 +49,12 @@ export const searchGif = async (search: string) => {
         limit: 1
       }
     });
-    if(!results.data || !results.data.data) return getRandomGif();
-    if(!results.data.data[0] || results.data.data[0] === undefined || results.data.data[0].length === 0) return getRandomGif();
+
+    if(!results.data || !results.data.data || results.data.data[0] === undefined || results.data.data[0].length === 0) {
+      // @ts-ignore
+      return getRandomGif().then(res => res.data);
+    }
+    
     return results.data.data[0];
   } catch (err) {
     return err;
