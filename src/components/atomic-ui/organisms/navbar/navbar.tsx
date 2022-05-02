@@ -1,3 +1,5 @@
+import Hamburger from "components/atomic-ui/atoms/hamburger/hamburger";
+import { useState } from "react";
 import "./navbar.css";
 
 interface Props {
@@ -8,18 +10,29 @@ interface Props {
 
 const  NavBar = (props: Props) => {
     const {categories, activeCat, generateGifByCat} = props;
+    const [active, setActiveNav] = useState(false);
 
+    const toggleMenu = () => {
+        setActiveNav(!active);
+    }
+
+    const clickCategory = (cat: string) => {
+        generateGifByCat(cat);
+        toggleMenu();
+    }
+    
   return (
     <>
-    <nav className="side-nav-content">
-        <ul className="nav-list">
-            {categories.map((cat, index) => (
-                <li key={index} className={activeCat === cat ? 'active' : ''}>
-                    <a onClick={() => generateGifByCat(cat)}>{cat}</a>
-                </li>
-            ))}
-        </ul>
-    </nav>
+        <Hamburger active={active} toggleMenu={toggleMenu}/>
+        <nav className={`${active ? 'active' : ''} side-nav-content`}>
+            <ul className={`${active ? 'active' : ''} nav-list`}>
+                {categories.map((cat, index) => (
+                    <li key={index} className={activeCat === cat ? 'active' : ''}>
+                        <a onClick={() => clickCategory(cat)}>{cat}</a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
     </>
     )
 }

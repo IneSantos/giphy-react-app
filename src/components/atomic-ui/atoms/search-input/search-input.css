@@ -1,0 +1,15 @@
+.search-term {
+  height: 64px;
+  outline: none;
+  padding-right: 30px;
+  background-color: black;
+  border: 1px solid lightgray;
+  display: block;
+  height: 56px;
+  width: 100%;
+  border-left: 0;
+}
+
+.search-term:focus{
+color:  var(--letter-color-black);
+}

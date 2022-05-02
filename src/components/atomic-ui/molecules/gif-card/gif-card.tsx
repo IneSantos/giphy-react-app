@@ -15,6 +15,7 @@ const GifCard = (props: Props) => {
     return  (
         <div className="gif-card-wrapper">
             <div className="gif-card-container" onClick={onClick}>
+                <Label title=" &#128071; Click the GIF below to see what happens  &#128071; &#128526;" />
                 <GifImg src={src} altText={altText}/>
                 <Label title={title}/>
             </div>

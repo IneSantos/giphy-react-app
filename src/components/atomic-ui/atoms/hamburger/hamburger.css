@@ -1,0 +1,53 @@
+.bar {
+    position: absolute;
+    width: 36px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.5s;
+}
+
+.hamburger__bar1{
+    top: -8px;
+}
+
+.hamburger__bar3{
+    top: 8px;
+}
+.header__hamburger {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    padding: 3em;
+}
+.header__hamburger > div{
+    position: relative;
+}
+.hamburger__bar1.active {
+    transform: rotate(-45deg);
+    top: 0;  
+}
+.hamburger__bar2.active{
+    opacity: 0;
+    
+}
+.hamburger__bar3.active {
+    transform: rotate(45deg);
+    top: 0;  
+}
+
+.side-nav-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -200%;
+    z-index: 1;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 5s ease;
+    background-color: black;
+}
+
+.side-nav-overlay.active{
+    right: 0;
+    left: 0;
+}

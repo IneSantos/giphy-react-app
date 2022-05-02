@@ -1,0 +1,11 @@
+.search-button {
+    height: 60px;
+    border:  1px solid lightgray;
+    background: black;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    border-right: 0;
+    padding-left: 30px;
+}
